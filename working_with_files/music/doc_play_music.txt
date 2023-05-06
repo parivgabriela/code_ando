@@ -1,0 +1,4 @@
+First install the library 
+-https://pypi.org/project/playsound/
+then give a existant folder to 
+play_list_of_folder('existant_folder')
