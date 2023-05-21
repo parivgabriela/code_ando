@@ -1,0 +1,3 @@
+id,categories,questions,alternatives,correct_answer
+1,"Math","Which type of number is Pi",["It's natural","it's racional", "It's negative", "It's irracional"],3
+2, "Capitals","Which is the capital of Bolivia", ["La Paz","sucre","Cochabamba", "Potosi"],1
