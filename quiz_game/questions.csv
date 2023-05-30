@@ -1,3 +1,5 @@
 id,categories,questions,alternatives,correct_answer
 1,"Math","Which type of number is Pi",["It's natural","it's racional", "It's negative", "It's irracional"],3
-2, "Capitals","Which is the capital of Bolivia", ["La Paz","sucre","Cochabamba", "Potosi"],1
+2,"Capitals","Which is the capital of Bolivia", ["La Paz","sucre","Cochabamba", "Potosi"],1
+3,"Capitals","The teeming capital of Egypt,______, is one of the largest cities in Africa. It sits along the Nile, the world’s longest river.",["Alexandria","Cairo","Giza"],1
+4,"Capitals","Togo's capital,_____, is home to the Hedzranawoe market, a hub for secondhand clothing.", ["Lomé","Ouagadougou","Porto-Novo"],0
