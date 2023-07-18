@@ -1,0 +1,12 @@
+This program will interact with the user and chatgpt
+.the user send a request with some topic that their want
+then this information will send to chatgpt or google
+
+##requirements
+
+pip install PyAudio
+pip install SpeechRecognition
+
+
+Does not support mp3 files
+By default the progrma recognize only english
