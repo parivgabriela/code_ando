@@ -28,9 +28,9 @@ def show_winners(list_winners):
         root.deiconify()
 
     button_return_root_window = tk.Button(window_winner, text="Return", cursor="hand2", command=return_main_window)
-    button_return_root_window.place(x=230, y=280)
+    button_return_root_window.place(x=230, y=320)
     button_close_window = tk.Button(window_winner, text="Close", cursor="hand2", command=close_window)
-    button_close_window.place(x=310, y=280)
+    button_close_window.place(x=310, y=320)
 
     position_y = 20
     for index, winner in enumerate(list_winners, start=1):
@@ -50,7 +50,7 @@ def raffle():
         message = validate_number_input(cant_winners)
         if not message:
             filename = in_filename.get()
-            list_winners = select_winners_from_file(filename, cant_winners)
+            list_winners = select_winners_from_file(filename, int(cant_winners))
             show_winners(list_winners)
         else:
             showinfo(title="retry", message=message)
