@@ -15,3 +15,7 @@ use a virtualenvironment to run the program
 -select a file with the names in column and with a title(name of the column)
 -clic on "raffle"
 -then you can finish or retry
+
+![pick](pick_raffle_screen_main.png)
+
+![pick](pick_raffle_screen_main_winners.png)
