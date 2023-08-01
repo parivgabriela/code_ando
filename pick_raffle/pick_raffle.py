@@ -12,6 +12,31 @@ def select_random_element_list(a_list):
     element = random.choice(a_list)
     print(f"elemento elegido {element}")
 
+def len_file(path):
+    lines = 0
+    with open(path) as f:
+        for line in f:
+            #count line by line to work with large files
+            lines = lines +1
+    return lines
+
+def select_winners_from_file(filename, cant_winners):
+    number_winners = select_n_winners_from(cant_winners, len_file(filename)-1)
+    winners = []
+    data_winner = {}
+    with open(filename, 'r') as f:
+        #avoid header
+        next(f)
+        for index, line in enumerate(f):
+            if index in number_winners:
+                clean_line = line.replace('\n', '')
+                data_winner[index] = clean_line
+    #save the order
+    for number in number_winners:
+        winners.append(data_winner[number])
+
+    return winners
+
 def select_random_number(max):
     #
     rand_number = randrange(max)
@@ -19,9 +44,11 @@ def select_random_number(max):
 
 def select_n_winners_from(n, max):
     list_winners = []
-    for element in range(n):
+    index = 0
+    while len(list_winners) != n:
         number = select_random_number(max)
         if not number in list_winners:
+            index = index + 1
             list_winners.append(number)
     return list_winners
 
@@ -43,4 +70,12 @@ def main_random():
         print(f"{index} Place: {winner}\n")
     #print(f"{} Place: {list_winners[0]}\nSecond Place: {list_winners[1]}\nThrid Place: {winner_3}")
 
-main_random()
+def main_random_file():
+    filename = input("Enter filename: ") #"names.csv"
+    cant_winners = validate_number("Cant of winners: ", len_file(filename))
+    list_winners = select_winners_from_file(filename, cant_winners)
+    print("Winners\n")
+    for index, winner in enumerate(list_winners, start=1):
+        print(f"{index} Place: {winner}\n")
+
+#main_random_file()
