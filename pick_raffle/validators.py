@@ -13,3 +13,12 @@ def validate_number(msg, max):
         except:
             print("Please enter a number")
     return number
+
+def validate_number_input(number):
+    message = ''
+    number = int(number)
+    if number < 1:
+        message = "number less must be greater than 0"
+    elif number > 10:
+        message = "number must be less than 10"
+    return message
