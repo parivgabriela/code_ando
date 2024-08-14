@@ -1,30 +1,25 @@
-import random
-import operator
-from flask import render_template
+from flask import Flask, render_template, request
+from maths import generate_function
 
-LEVEL_0 = 10
-LEVEL_1 = 100
-LEVEL_2 = 1000
+app = Flask(__name__)
 
-def generate_function(level):
-    list_operation = {'+':operator.add, 
-                      '-':operator.sub #, '*':operator.mul
-                      }
-    operator_symbol = random.choice(list(list_operation.keys()))
-    operator_f = list_operation[operator_symbol]
-    x = random.randrange(1,level)
-    y = random.randrange(1,level)
-    resultado = operator_f(x, y)
-    function_s = f"{x} {operator_symbol} {y} = "
-    if level == LEVEL_2:
-        z = random.randrange(1,level)
-    
-    return (function_s, resultado)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
-    return render_template()
+    #primero seleccionar nivel
+    return render_template('index.html')
+    
+@app.route('/select_level', methods=['POST'])
+def select_level():
+    level = request.form.get('level')
+    random_function, result = generate_function(int(level))
+    return render_template('math.html', function_r=random_function)
+
+@app.route('/math')
+def math():
+    
+    return render_template('math.html')
 
 
-print(generate_function(LEVEL_1))
-
+if __name__ == "__main__":
+    app.run(debug=True)
