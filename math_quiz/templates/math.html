@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Math Quiz</h1>
+        <div class="quiz-box">
+            <label id="math-operation">{{ function_r }} ?</label>
+            <input type="number" id="user-answer" placeholder="Your answer">
+            <button onclick="checkAnswer()">Submit</button>
+            <p id="score"></p>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 19; // Replace with dynamic value for real quiz
+            const userAnswer = parseInt(document.getElementById('user-answer').value);
+            const scoreLabel = document.getElementById('score');
+
+            if (userAnswer === correctAnswer) {
+                scoreLabel.textContent = "Correct! Well done!";
+            } else {
+                scoreLabel.textContent = "Incorrect. Try again!";
+            }
+        }
+    </script>
+</body>
+</html>

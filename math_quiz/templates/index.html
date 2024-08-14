@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Math Quiz</h1>
+        <p>Select your level:</p>
+        <div class="level-buttons">
+            <form action="/select_level" method="POST">
+                <button type="submit" name="level" class="btn" value="10" >1</button>
+                <button type="submit" name="level" class="btn" value="100" >1</button>
+                <button type="submit" name="level" class="btn" value="1000" >1</button>
+        </form>
+        </div>
+    </div>
+    
+</body>
+</html>
