@@ -19,4 +19,4 @@ def generate_function(level):
     if level == LEVEL_2:
         z = random.randrange(1,level)
     
-    return (function_s, resultado)
+    return (function_s, str(resultado))
