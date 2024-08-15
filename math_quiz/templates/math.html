@@ -10,10 +10,13 @@
     <div class="quiz-container">
         <h1>Math Quiz</h1>
         <div class="quiz-box">
-            <label id="math-operation">{{ function_r }} ?</label>
-            <input type="number" id="user-answer" placeholder="Your answer">
-            <button onclick="checkAnswer()">Submit</button>
-            <p id="score"></p>
+            <form action="/check_result" method="POST">
+                <label id="math-operation">{{ function_r }} ?</label>
+                <input type="number" name="user_result" placeholder="Your answer">
+                <button onclick="checkAnswer()">Submit</button>
+            </form>
+            <p id="status_result">{{ status_result }}</p>
+            <p id="score">{{ score }}</p>
         </div>
     </div>
 
