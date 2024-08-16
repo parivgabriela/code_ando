@@ -5,33 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Quiz</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <script src="/static/scripts.js"></script> 
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Math Quiz</h1>
+        <h1 class="title">Math Quiz</h1>
         <div class="quiz-box">
+            <p class="score">Score: {{ score }}</p>
             <form action="/check_result" method="POST">
                 <label id="math-operation">{{ function_r }} ?</label>
                 <input type="number" name="user_result" placeholder="Your answer">
                 <button onclick="checkAnswer()">Submit</button>
             </form>
             <p id="status_result">{{ status_result }}</p>
-            <p id="score">{{ score }}</p>
+            
         </div>
+        <div id="timer">01:00</div>
+
     </div>
 
-    <script>
-        function checkAnswer() {
-            const correctAnswer = 19; // Replace with dynamic value for real quiz
-            const userAnswer = parseInt(document.getElementById('user-answer').value);
-            const scoreLabel = document.getElementById('score');
-
-            if (userAnswer === correctAnswer) {
-                scoreLabel.textContent = "Correct! Well done!";
-            } else {
-                scoreLabel.textContent = "Incorrect. Try again!";
-            }
-        }
-    </script>
 </body>
 </html>
