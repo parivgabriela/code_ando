@@ -6,6 +6,9 @@ LEVEL_0 = 10
 LEVEL_1 = 100
 LEVEL_2 = 1000
 
+result_wrong = 'Wrong! Try again!'
+result_ok = 'Well done!'
+
 def generate_function(level):
     list_operation = {'+':operator.add, 
                       '-':operator.sub #, '*':operator.mul
