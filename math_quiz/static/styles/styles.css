@@ -62,9 +62,10 @@ button:hover {
     background-color: #e64a19;
 }
 
-#score {
+.score {
     margin-top: 20px;
     font-size: 18px;
+    font: #ffbb86
 }
 
 .level-buttons {
@@ -86,4 +87,18 @@ button:hover {
 }
 .btn:hover {
     background-color: #3700b3;
+}
+
+/* math.html */
+
+#timer {
+    font-size: 28px;
+    color: #e64a19;
+}
+
+#timer.red {
+    color: red;
+}
+.title{
+    font-size: 48px;
 }
