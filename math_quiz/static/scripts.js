@@ -9,9 +9,13 @@ function startTimer(duration, display) {
 
         display.textContent = minutes + ":" + seconds;
 
+        var percentage = ((duration - timer) / duration) * 100;
+                progressBar.style.width = 100 - percentage + "%";
+        
         // Change color to red when timer reaches 10 seconds
         if (timer <= 10) {
             display.classList.add("red");
+            progressBar.classList.add("red");
         }
 
         if (--timer < 0) {
@@ -28,5 +32,7 @@ function startTimer(duration, display) {
 window.onload = function () {
     var oneMinute = 60,
         display = document.querySelector('#timer');
-    startTimer(oneMinute, display);
+        progressBar = document.querySelector('#progress-bar');
+    startTimer(oneMinute, display, progressBar);
 };
+
