@@ -6,26 +6,29 @@
     <title>Math Quiz</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
     <script src="/static/scripts.js"></script> 
+    <link type="image/png" sizes="16x16" rel="icon" href="static/icons8-check-16.png">
 </head>
 <body>
     <div class="quiz-container">
         <h1 class="title">Math Quiz</h1>
         <div class="quiz-box">
+            <p class="subtitle">Level: {{ level }}</p>
             <p class="score">Score: {{ score }}</p>
             <form action="/check_result" method="POST">
                 <label id="math-operation">{{ function_r }} ?</label>
                 <input type="number" name="user_result" placeholder="Your answer">
-                <button onclick="checkAnswer()">Submit</button>
+                <div class="timer-container">
+                    <div id="timer"></div>
+                    <div id="progress-bar-container">
+                        <div id="progress-bar"></div>
+                    </div>
+                </div>
+                <button class="button_style">Submit</button>
             </form>
             <p id="status_result">{{ status_result }}</p>
             
         </div>
-        <div class="timer-container">
-            <div id="timer">01:00</div>
-            <div id="progress-bar-container">
-                <div id="progress-bar"></div>
-            </div>
-        </div>
+        
         
 
     </div>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Quiz</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <link type="image/png" sizes="16x16" rel="icon" href="static/icons8-check-16.png">
 </head>
 <body>
     <div class="container">
@@ -12,9 +13,9 @@
         <p>Select your level:</p>
         <div class="level-buttons">
             <form action="/select_level" method="POST">
-                <button type="submit" name="level" class="btn" value="10" >1</button>
-                <button type="submit" name="level" class="btn" value="100" >2</button>
-                <button type="submit" name="level" class="btn" value="1000" >3</button>
+                {% for value in list_levels %}
+                    <button  type="submit" class="button_style btn " name="level" value="{{ value }}">{{ value }}</button>
+                {% endfor %}
         </form>
         </div>
     </div>
