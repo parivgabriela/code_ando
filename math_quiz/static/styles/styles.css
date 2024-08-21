@@ -47,7 +47,7 @@ input[type="number"] {
     margin-bottom: 20px;
 }
 
-button {
+.button_style {
     padding: 10px 20px;
     font-size: 18px;
     border-radius: 5px;
@@ -105,7 +105,7 @@ button:hover {
 
 #progress-bar-container {
     width: 100%;
-    background-color: #21150a;
+    background-color: #100903;
     height: 30px;
     border-radius: 5px;
     overflow: hidden;
@@ -123,4 +123,8 @@ button:hover {
 }
 .title{
     font-size: 48px;
+}
+.subtitle{
+    color: #e64a19;
+    font-size: 22px;
 }
