@@ -1,0 +1,5 @@
+# requirements.txt
+flask==2.0.1
+pandas==1.3.3
+openpyxl==3.0.9
+werkzeug==2.0.1

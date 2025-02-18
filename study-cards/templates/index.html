@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Aprendizaje</title>   
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Aprendizaje</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <h2>Cargar archivo de preguntas</h2>
+            <input type="file" id="file" name="file" accept=".xlsx,.csv">
+            <button type="submit">Cargar archivoo</button>
+        </form>
+        </div>
+        <div class="mode-selection" style="display: none;">
+            <h2>Selecciona el modo</h2>
+            <button onclick="startMode('review')">Modo Repaso</button>
+            <button onclick="startMode('test')">Modo Prueba</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Sistema de Aprendizaje</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div id="quiz-container">
+            <h2>Pregunta: <span id="question-number">1</span></h2>
+            <div id="question-text"></div>
+            <div id="hint-section" style="display: none;">
+                <button onclick="showHint()">Mostrar pista</button>
+                <p id="hint-text" style="display: none;"></p>
+            </div>
+            <div id="answer-section" style="display: none;">
+                <p id="answer-text"></p>
+            </div>
+            <div class="buttons">
+                <button onclick="checkAnswer('correct')">¡Acerté!</button>
+                <button onclick="checkAnswer('incorrect')">No recuerdo</button>
+            </div>
+        </div>
+        <div id="results" style="display: none;">
+            <h2>Resultados</h2>
+            <p>Preguntas correctas: <span id="correct-count">0</span></p>
+            <p>Preguntas incorrectas: <span id="incorrect-count">0</span></p>
+            <p>Porcentaje de acierto: <span id="percentage">0</span>%</p>
+            <button onclick="restartQuiz()">Volver a intentar</button>
+            <button onclick="window.location.href='/'">Volver al inicio</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
