@@ -4,21 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Aprendizaje</title>   
-    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Sistema de Aprendizaje</h1>
-        <form action="/upload" method="POST" enctype="multipart/form-data">
-            <h2>Cargar archivo de preguntas</h2>
-            <input type="file" id="file" name="file" accept=".xlsx,.csv">
-            <button type="submit">Cargar archivoo</button>
-        </form>
+        <!-- Upload Screen -->
+        <div id="uploadScreen" class="screen active">
+            <h1>Quiz App</h1>
+            <input type="file" id="fileInput" class="file-input" accept=".csv,.xlsx,.xls">
+            <label for="fileInput" class="file-label">Seleccionar archivo</label>
+            <p>Formatos permitidos: CSV, Excel</p>
         </div>
-        <div class="mode-selection" style="display: none;">
-            <h2>Selecciona el modo</h2>
-            <button onclick="startMode('review')">Modo Repaso</button>
-            <button onclick="startMode('test')">Modo Prueba</button>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="question-card">
+                <h2 id="question"></h2>
+                <p id="answer" class="answer"></p>
+            </div>
+            <div>
+                <button id="correctBtn" class="button button-primary">Acerté</button>
+                <button id="hintBtn" class="button button-secondary">Pista</button>
+                <button id="skipBtn" class="button button-warning">Paso</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <h2>Resultados</h2>
+            <div class="results">
+                <h3>Porcentaje de aciertos: <span id="percentage">0</span>%</h3>
+                <h3>Preguntas para repasar:</h3>
+                <div id="reviewList" class="review-list"></div>
+            </div>
+            <button id="restartBtn" class="button button-primary">Comenzar nuevo quiz</button>
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>

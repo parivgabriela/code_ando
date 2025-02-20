@@ -1,55 +1,110 @@
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+:root {
+    --background: #1a1a1a;
+    --text: #ffffff;
+    --primary: #4CAF50;
+    --secondary: #2196F3;
+    --warning: #ff9800;
+    --error: #f44336;
 }
 
-.upload-section {
-    margin: 20px 0;
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
     padding: 20px;
-    border: 2px dashed #ccc;
-    border-radius: 5px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.screen {
+    display: none;
+    width: 100%;
     text-align: center;
 }
 
-button {
+.active {
+    display: block;
+}
+
+.button {
     padding: 10px 20px;
     margin: 10px;
-    background-color: #007bff;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.3s;
 }
 
-button:hover {
-    background-color: #0056b3;
+.button:hover {
+    opacity: 0.8;
 }
 
-#quiz-container {
+.button-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.button-secondary {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.button-warning {
+    background-color: var(--warning);
+    color: black;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.question-card {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.answer {
+    display: none;
+    margin-top: 10px;
+    color: var(--primary);
+}
+
+.results {
     margin-top: 20px;
 }
 
-#question-text {
-    font-size: 1.2em;
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-}
-
-#answer-section {
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #e9ecef;
-    border-radius: 5px;
-}
-
-#results {
+.review-list {
+    text-align: left;
     margin-top: 20px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
 }
 
+.review-item {
+    background-color: #2d2d2d;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
