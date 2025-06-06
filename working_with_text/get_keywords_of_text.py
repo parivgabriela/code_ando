@@ -1,30 +1,32 @@
 from keybert import KeyBERT
+import nltk
+from nltk.corpus import stopwords
 
-def extraer_palabras_clave(texto, num_keywords=10, is_dupla=False):
+# revisar Descargar stopwords en español (solo la primera vez)
+nltk.download("stopwords")
+def remove_stopwords(text):
+    """ Remove spanish stopwords from text"""
+    stop_words = set(stopwords.words("spanish"))
+
+    filter_words = [word for word in text.split() if word.lower() not in stop_words]
+    return " ".join(filter_words)
+
+def extract_keywords(text, num_keywords=10, is_dupla=False, resaltar_palabras=False):
     """
-    Extrae las palabras clave de un texto en español utilizando KeyBERT.
+    Get keywords from a spanish text use KeyBERT.
     
     Args:
-    - texto (str): El texto del cual extraer las palabras clave.
-    - num_keywords (int): Número de palabras clave a extraer.
+    - text (str): text to find keywords.
+    - num_keywords (int): number of words to extract.
+    - is_dupla(bool): if True return a tupla of keywords else a single keyword
     
     Returns:
-    - list: Lista de tuplas con las palabras clave y su puntuación de relevancia.
+    - list: List of tuples with keyword and score of relevance.
     """
+    basic_stopwords_sp = ["un", "una", "el", "la", "que", "de", "en"]
+
     kw_model = KeyBERT()
 
     if is_dupla:
-        return kw_model.extract_keywords(texto, keyphrase_ngram_range=(1, 2), stop_words=None)
-    return kw_model.extract_keywords(texto, top_n=num_keywords)
-
-# Ejemplo de uso
-texto = """
-La inteligencia artificial es un campo de estudio que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana. 
-Estas tareas incluyen el reconocimiento de voz, la toma de decisiones, la traducción de idiomas y la percepción visual. 
-La inteligencia artificial se basa en algoritmos y modelos matemáticos que permiten a las máquinas aprender de los datos y mejorar su rendimiento con el tiempo.
-"""
-
-keywords = extraer_palabras_clave(texto)
-print("Palabras clave extraídas:")
-for palabra, puntuacion in keywords:
-    print(f"{palabra}: {puntuacion}")
+        return kw_model.extract_keywords(text, keyphrase_ngram_range=(1, 2), stop_words=basic_stopwords_sp, top_n=num_keywords, highlight=resaltar_palabras)
+    return kw_model.extract_keywords(text, keyphrase_ngram_range=(1, 2), stop_words=basic_stopwords_sp, top_n=num_keywords, highlight=resaltar_palabras)

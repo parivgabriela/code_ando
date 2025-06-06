@@ -1,8 +1,8 @@
 import re
-import os
 import math
-from typing import Dict, List, Union
+from typing import Dict, Union
 from pathlib import Path
+from SpanishTextAnalyzerLibrary import count_spanish_sentences
 
 class SpanishTextAnalyzer:
     """
@@ -100,7 +100,7 @@ class SpanishTextAnalyzer:
         word_count = len(words)
         
         # Conteo de oraciones
-        sentences = re.split(r'[.!?]+', text)
+        sentences = count_spanish_sentences(text)
         sentence_count = len([s for s in sentences if s.strip()])
         
         # Conteo de párrafos
