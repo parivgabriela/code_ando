@@ -69,4 +69,4 @@ if __name__ == "__main__":
         print("\n" + "="*40 + "\n")
         print("Para salir ingrese 0")
 
-        pregunta_nueva = input("Ingrese una pregunta")
+        pregunta_nueva = input("Ingrese una pregunta: ")

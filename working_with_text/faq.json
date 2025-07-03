@@ -1,0 +1,9 @@
+{
+    "cual es la diferencia entre dato e informacion": "El dato es la materia prima sin procesar. La información es el resultado de procesar, organizar y contextualizar los datos, dándoles significado.",
+    "que es un dato": "Es una representación simbólica (numérica, alfabética, etc.) de un atributo o variable. Es la unidad mínima de información.",
+    "que es una base de datos": "Es un conjunto organizado de datos estructurados que se almacenan electrónicamente en un sistema informático, permitiendo su fácil acceso, gestión y actualización.",
+    "que es ia": "La Inteligencia Artificial (IA) es un campo de la informática dedicado a la creación de sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como el aprendizaje, el razonamiento y la percepción.",
+    "que es deep learning": "El Aprendizaje Profundo (Deep Learning) es un subcampo del Machine Learning basado en redes neuronales artificiales con múltiples capas (arquitecturas profundas) que aprenden de grandes cantidades de datos.",
+    "que es una red neuronal": "Es un modelo computacional inspirado en la estructura y función de las redes neuronales biológicas. Consiste en nodos o 'neuronas' interconectadas que procesan y transmiten información.",
+    "que es redes convolucionales": "Las Redes Neuronales Convolucionales (CNN) son una clase de redes neuronales profundas, muy eficaces para el análisis de datos visuales, como imágenes y videos, ya que pueden identificar patrones y características jerárquicas."
+}
